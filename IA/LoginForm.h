@@ -34,6 +34,8 @@ namespace IA {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Label^ label1;
+	protected:
 
 	private:
 		/// <summary>
@@ -48,21 +50,37 @@ namespace IA {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(312, 63);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(51, 20);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"label1";
+			this->label1->Click += gcnew System::EventHandler(this, &LoginForm::label1_Click);
 			// 
 			// LoginForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(284, 261);
+			this->ClientSize = System::Drawing::Size(755, 417);
+			this->Controls->Add(this->label1);
+			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->Name = L"LoginForm";
 			this->Text = L"LoginForm";
 			this->Load += gcnew System::EventHandler(this, &LoginForm::LoginForm_Load);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void LoginForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	};
 }
